@@ -112,7 +112,9 @@ getFile() {
 
 
 downloadFile() {
-	get TAG https://glide.sh/version
+    if [ -z "$TAG" ]; then
+	    get TAG https://glide.sh/version
+	fi
 	echo "TAG=$TAG"
 	GLIDE_DIST="glide-$TAG-$OS-$ARCH.tar.gz"
 	echo "GLIDE_DIST=$GLIDE_DIST"
